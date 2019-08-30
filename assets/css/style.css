@@ -1,19 +1,30 @@
+/* Body */
+body{
+
+    background-image: url("../images/symphony.png");
+
+}
+
 /* jumbotron */
 #container-title{
 
 
     background-image: url("http://getwallpapers.com/wallpaper/full/c/3/7/900253-gorgerous-beach-background-wallpaper-2560x1440-for-mobile.jpg");
+
     background-position: center;
 }
 
 #title {
     text-align: center;
-    font-family: 'Bungee Shade', cursive;
+    font-family: 'Megrim', cursive;
+    font-size: 80px;
+    text-shadow: 2px 2px white;
     color: yellow;
 }
 .lead {
     text-align: center;
     font-family: 'Love Ya Like A Sister', cursive;
+    text-shadow: 2px 2px white;
     color: sandybrown;
 }
 #address-banner {
