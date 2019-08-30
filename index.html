@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="assets/css/style.css">
 
     <!-- Link to Google Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Bungee+Shade|Unkempt|Love+Ya+Like+A+Sister|Megrim&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Bungee+Shade|Unkempt|Love+Ya+Like+A+Sister|Megrim|Livvic&display=swap" rel="stylesheet">
 
     <!-- Link to Font Awesome -->
     <script src="https://kit.fontawesome.com/b40fec9922.js"></script>
@@ -28,11 +28,11 @@
 <body>
 
     <!-- Create the jumbotron -->
-    <div class="jumbotron mx-5 mt-2" id="container-title">
+    <div class="jumbotron" id="container-title">
             <h1 class="display-4" id="title">Beach Box</h1>
-            <p class="lead">Organizing a weekend at the beach has never been easier!</p>
+            <p class="lead" id="subtitle">Organizing a weekend at the beach has never been easier!</p>
 
-            <hr class="my-4">
+            <br><br>
 
             <p id="address-banner">Enter an address below to get started</p>
 
@@ -40,51 +40,47 @@
             <p id="text-box">
                 <input id="user-input" type="text" placeholder="Address">
             </p>
-
-            <div class="container">
-                    <div class="row">
-                
-                
-                        <!-- Card 1 -->
-                                <div class="col-md-4">
-                                    <div class="card py-3" id="card1">
-                                        <i class="fas fa-umbrella-beach fa-5x"></i>
-                                        <div class="card-body">
-                                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                        </div>
-                                    </div>
-                                </div>
-                
-                
-                        <!-- Card 2 -->
-                
-                
-                                    <div class="col-md-4">
-                                        <div class="card py-3" id="card1">
-                                            <i class="fas fa-umbrella-beach fa-5x"></i>
-                                            <div class="card-body">
-                                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                
-                        <!-- Card 3 -->
-                
-                                    <div class="col-md-4">
-                                        <div class="card py-3" id="card1">
-                                            <i class="fas fa-umbrella-beach fa-5x"></i>
-                                            <div class="card-body">
-                                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                
+            <br>
+    </div>
+    <hr class="my-4 mx-4" id="title-break">
+    <!-- All cards -->
+    <div class="container">
+            <div class="row">
+        
+        
+                <!-- Card 1 -->
+                <div class="col-md-4">
+                    <div class="card py-3" id="card1">
+                        <i class="fas fa-umbrella-beach fa-5x" id="parasol"></i>
+                        <div class="card-body" id="card1-body">
+                        <p class="card-text" id="card1-text">Find the beach closest to you.</p>
+                        </div>
                     </div>
                 </div>
-                
-
-    </div>
-
+        
+        
+                <!-- Card 2 -->
+                <div class="col-md-4">
+                    <div class="card py-3" id="card1">
+                            <i class="fas fa-sun fa-5x" id="sun"></i>
+                        <div class="card-body" id="card2-body">
+                        <p class="card-text" id="card2-text">Get the essential weather forecast including tides, sunrise, and sunset.</p>
+                        </div>
+                    </div>
+                </div>
+        
+                <!-- Card 3 -->
+                <div class="col-md-4">
+                    <div class="card py-3" id="card3">
+                        <i class="fas fa-glass-martini-alt fa-5x" id="martini"></i>
+                        <div class="card-body" id="card3-body">
+                        <p class="card-text" id="card3-text">Find restaurants and events near you.</p>
+                        </div>
+                    </div>
+                </div>
+        
+            </div>
+        </div>
 
 
 
