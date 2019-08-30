@@ -8,7 +8,7 @@ body{
 /* jumbotron */
 #container-title{
 
-
+    border: solid 1px black;
     background-image: url("http://getwallpapers.com/wallpaper/full/c/3/7/900253-gorgerous-beach-background-wallpaper-2560x1440-for-mobile.jpg");
 
     background-position: center;
@@ -33,4 +33,32 @@ body{
 }
 #text-box {
     text-align:center;
+}
+
+
+/* Cards */
+
+#img-lovers{
+    margin: auto;
+    height: 300px;
+    width: 200px;
+}
+
+#img-sandthrow {
+    margin: auto;
+    height: 300px;
+    width: 200px;
+}
+
+#card1 {
+    text-align: center;
+    background: rgba(157, 176, 180, 0.6);
+}
+#card2 {
+    text-align: center;
+    background: rgba(157, 176, 180, 0.6);
+}
+#card3 {
+    text-align: center;
+    background: rgba(157, 176, 180, 0.6);
 }
