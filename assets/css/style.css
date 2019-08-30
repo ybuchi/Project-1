@@ -1,4 +1,25 @@
 /* jumbotron */
-#title-jumbotron{
-    background-image: url("/assets/images/symphony.png")
+#container-title{
+
+
+    background-image: url("http://getwallpapers.com/wallpaper/full/c/3/7/900253-gorgerous-beach-background-wallpaper-2560x1440-for-mobile.jpg");
+    background-position: center;
+}
+
+#title {
+    text-align: center;
+    font-family: 'Bungee Shade', cursive;
+    color: yellow;
+}
+.lead {
+    text-align: center;
+    font-family: 'Love Ya Like A Sister', cursive;
+    color: sandybrown;
+}
+#address-banner {
+    text-align: center;
+    font-family: 'Love Ya Like A Sister', cursive;
+}
+#text-box {
+    text-align:center;
 }
