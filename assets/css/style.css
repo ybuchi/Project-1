@@ -1,0 +1,108 @@
+/* Body */
+body{
+
+    background-image: url("../images/symphony.png");
+
+}
+
+/* jumbotron */
+#container-title{
+
+    background-image: url("http://getwallpapers.com/wallpaper/full/c/3/7/900253-gorgerous-beach-background-wallpaper-2560x1440-for-mobile.jpg");
+
+    background-position: center;
+}
+
+#title {
+    text-align: center;
+    font-weight: bold;
+    font-family: 'Megrim', cursive;
+    font-size: 100px;
+    text-shadow: 2px 2px grey;
+    color: yellow;
+}
+#subtitle {
+    text-align: center;
+    font-size: 30px;
+    font-family: 'Love Ya Like A Sister', cursive;
+    text-shadow: 2px 2px grey;
+    color: sandybrown;
+}
+#address-banner {
+    text-align: center;
+    font-size: 40px;
+    font-family: 'Love Ya Like A Sister', cursive;
+}
+#text-box {
+    text-align:center;
+}
+
+input[type=text] {
+    font-size: 20px;
+    width: 45%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+  }
+#title-break{
+    font-weight: bold;
+}
+/* Cards */
+#card1 {
+    height: 300px;
+    text-align: center;
+    background: rgba(42, 127, 177, 0.6);
+}
+#card2 {
+    height: 300px;
+    text-align: center;
+    background:  rgba(42, 127, 177, 0.6);
+}
+#card3 {    
+    height: 300px;
+    text-align: center;
+    background:  rgba(42, 127, 177, 0.6);
+}
+
+/* Card Text */
+#card1-text{
+    font-family: 'Livvic', sans-serif;
+    font-size: 20px;
+
+    width: 100%;
+}
+#card2-text{
+    font-family: 'Livvic', sans-serif;
+    font-size: 20px;
+}
+#card3-text{
+    font-family: 'Livvic', sans-serif;
+    font-size: 20px;
+}
+
+/* Card Div Body */
+#card1-body{
+    background: rgb(255, 255, 255,0.3);
+}
+#card2-body{
+    background: rgb(255, 255, 255,0.3);
+}
+#card3-body{
+    background: rgb(255, 255, 255,0.3);
+}
+/* Icons */
+#parasol{
+    color:purple;
+    margin-bottom: 25px;
+    margin-top: 20px;
+}
+#sun{
+    color: orange;
+    margin-bottom: 25px;
+    margin-top: 20px;
+}
+#martini{
+    color: turquoise;
+    margin-bottom: 25px;
+    margin-top: 20px;
+}
