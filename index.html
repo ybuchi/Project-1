@@ -37,11 +37,12 @@
             <p id="address-banner">Enter an address below to get started</p>
 
             <!-- User text input goes here -->
-            <p id="text-box">
-                <input id="user-input" type="text" placeholder="Address">
-                <button type="button" class="btn btn-primary" id="btn-submit">Submit</button>
-            </p>
-            <br>
+            <form>
+                <div class="form-group">
+                  <input type="text" class="form-control" id="user-input" placeholder="Enter address">
+                  <button type="submit" class="btn btn-primary" id="btn-submit">Submit</button>
+                </div>
+              </form>
     </div>
     <hr class="my-4 mx-4" id="title-break">
     <!-- All cards -->
@@ -94,8 +95,9 @@
   src="https://code.jquery.com/jquery-3.4.1.js"
   integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
   crossorigin="anonymous"></script>
+
 <!-- link to our JavaScript -->
-<link rel="stylesheet" href="/assets/app.js">
+<script src="assets/javascript/eventbrite-api.js"></script>
     
 </body>
 </html>
