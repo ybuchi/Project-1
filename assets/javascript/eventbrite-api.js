@@ -28,10 +28,43 @@ $("#btn-submit").click(function(){
     .then(function(response) {
         console.log('response received');
         console.log(response);
+   
+
+        //Empty the page
+        $("body").html("");
+
+        //Add a navbar
+
+        //Create divs with appropriate ids to receive the API information
+
+        var apiContainer1 = $("<div>");
+        apiContainer1.addClass("container");
+        apiContainer1.attr("id", "api-container-1");
+        $("body").append(apiContainer1);
+
+        var apiRow1 = $("<div>");
+        apiRow1.addClass("row");
+        apiRow1.attr("id", "api-row-1");
+        $("#api-container-1").append(apiRow1);
+
+        var mapDiv = $("<div>");
+        mapDiv.addClass("col-md-6");
+        mapDiv.attr("id", "map-api");
+        $("#api-row-1").append(mapDiv);
+
+        var eventBriteDiv = $("div");
+        eventBriteDiv.addClass("col-md-6");
+        eventBriteDiv.attr("id", "eventbrite-api");
+        $("#api-row-1").append(eventBriteDiv);
+
+
+        // Append the Eventbrite Information
+
+        //This is the event description that we will want to post
+        console.log("The Eventbrite respnose that will be displayed is:" + JSON.stringify(response.events[0].description.text));
+
+        var eventDescription = response.events[0].description.text;
+
+        $("#eventbrite-api").append(eventDescription);
     })
-
-//Empty the page
-$("body").html("");
-
-
 })
