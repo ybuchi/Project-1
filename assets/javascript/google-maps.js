@@ -64,26 +64,26 @@ function geocodeAddress(geocoder, resultsMap) {
 
 }
 
-//Nearby Places Request
-// var request = {
-//   //Need to figure out a way to get Long/Lat into this object field
-//   location: getLocation(address),
-//   radius: '16129',
-//   keyword: 'beach'
-// };
+Nearby Places Request
+var request = {
+  //Need to figure out a way to get Long/Lat into this object field
+  location: getLocation(address),
+  radius: '16129',
+  keyword: 'beach'
+};
 
-// console.log(request.location);
+console.log(request.location);
 
-// service = new google.maps.places.PlacesService(map);
-// service.nearbySearch(request, callback);
+service = new google.maps.places.PlacesService(map);
+service.nearbySearch(request, callback);
 
-//Ajax Request to Geocode API
-// var getLocation = function (address) {
-//   $.ajax({
-//     url: 'https://maps.googleapis.com/maps/api/geocode/json?address=' + address + '&key=AIzaSyD_uRt9vKnbfDV5hnOzck20BCb6-NhR0kc',
-//     method: 'GET'
-//   }).then(function (result) {
-//     console.log(result.results[0].geometry.location);
-//     return result.results[0].geometry.location;
-//   });
-// }
+Ajax Request to Geocode API
+var getLocation = function (address) {
+  $.ajax({
+    url: 'https://maps.googleapis.com/maps/api/geocode/json?address=' + address + '&key=AIzaSyD_uRt9vKnbfDV5hnOzck20BCb6-NhR0kc',
+    method: 'GET'
+  }).then(function (result) {
+    console.log(result.results[0].geometry.location);
+    return result.results[0].geometry.location;
+  });
+}
