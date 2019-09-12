@@ -1,3 +1,8 @@
+
+$("#btn-submit").click(function(){
+
+console.log("The Google Maps API request can be initiated.");
+
 //Builds the API query URL; logs it to the console for reference
 var apiKey = "AIzaSyD_uRt9vKnbfDV5hnOzck20BCb6-NhR0kc";
 
@@ -29,13 +34,10 @@ function initMap() {
   bikeLayer.setMap(map);
 
   //Listener for new user input
-  document.getElementById('btn-submit').addEventListener('click', function () {
+  document.getElementById('user-input').addEventListener('click', function () {
     geocodeAddress(geocoder, map);
   });
 }
-
-// Function that receives an address from the user and receives polar coordinates for the location from Google Maps
-var address = document.getElementById('address').value;
 
 function geocodeAddress(geocoder, resultsMap) {
 
@@ -64,30 +66,27 @@ function geocodeAddress(geocoder, resultsMap) {
 
 }
 
-//Nearby Places Request
-// var request = {
-//   //Need to figure out a way to get Long/Lat into this object field
-//   location: getLocation(address),
-//   radius: '16129',
-//   keyword: 'beach'
-// };
+  // Nearby Places Request
+var request = {
+  //Need to figure out a way to get Long/Lat into this object field
+  location: getLocation(address),
+  radius: '16129',
+  keyword: 'beach'
+};
 
-// console.log(request.location);
+console.log(request.location);
 
-// service = new google.maps.places.PlacesService(map);
-// service.nearbySearch(request, callback);
+service = new google.maps.places.PlacesService(map);
+service.nearbySearch(request, callback);
 
-//Ajax Request to Geocode API
-// var getLocation = function (address) {
-//   $.ajax({
-//     url: 'https://maps.googleapis.com/maps/api/geocode/json?address=' + address + '&key=AIzaSyD_uRt9vKnbfDV5hnOzck20BCb6-NhR0kc',
-//     method: 'GET'
-//   }).then(function (result) {
-//     console.log(result.results[0].geometry.location);
-//     return result.results[0].geometry.location;
-//   });
-// }
-
-
-
-
+  // Ajax Request to Geocode API
+  var getLocation = function (address) {
+    $.ajax({
+      url: 'https://maps.googleapis.com/maps/api/geocode/json?address=' + address + '&key=' + apiKey,
+      method: 'GET'
+    }).then(function (result) {
+      console.log(result.results[0].geometry.location);
+      return result.results[0].geometry.location;
+    });
+  };
+})
