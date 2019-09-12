@@ -1,34 +1,103 @@
 // Create global variables
 $( document ).ready(function() {
-    console.log( "ready!" );
+    console.log( "Evenbrite API JS says READY!" );
 });
 
+// **** WHEN THE USER CLICKS SUBMIT ****
 $("#btn-submit").click(function(){
-    event.preventDefault();
-    console.log("The user has clicked the submit button.");
+    console.log("The Eventbrite API request is ready to be initiated.");
 
-    //Create variables for AJAX call
-    //
-    var eventAddress = $("user-input").val();
+    //Store the inputted address
+
+    var eventAddress = $("#user-input").val();
     console.log(eventAddress);
-
-    var APIkey = "FWYJCNLH34HYMJ3ZOE";
     
     //Constructing the URL
-    var queryURL = "https://www.eventbriteapi.com/v3/users/me/?token=" + APIkey + "/events/search/?location.address="+ eventAddress;
+
+    var queryURL = "https://cors-anywhere.herokuapp.com/https://www.eventbriteapi.com/v3/events/search?location.address=" + eventAddress + "&location.within=10km&categories=103&expand=venue&expand=category";
 
     //Make the AJAX call
 
     $.ajax({
         url: queryURL,
-        method: "GET"
-    }).then(function(response){
-
+        method: "GET",
+        headers: {
+            Authorization: "Bearer FYKCROWHDWQSXBO7WGPZ"
+        }
+    })
+    .then(function(response) {
+        console.log('response received');
         console.log(response);
+   
+
+        //Empty the page
+        $("body").html("");
+
+        //Add a navbar
+
+
+        // Create a for loop to create and display the Eventbrite API
+
+ 
+
+        // Create the high-level container
+        var hlContainer = $("<div>").addClass("container");
+        hlContainer.attr("id", "hl-container");
+        $("body").append(hlContainer);
+
+        //Create the row and divs for the map and eventbrite apis
+
+        var row1 = $("<div>").addClass("row");
+        row1.attr("id", "row-1");
+        $("#hl-container").append(row1);
+
+            // display GOOGLE MAPS DIV
+        var mapDiv = $("<div>").addClass("col-md-6");
+        mapDiv.attr("id", "map-div");
+        $("#row-1").append(mapDiv);
+
+            // display Eventbrite DIV
+        var eventDiv = $("<div>").addClass("col-md-6");
+        eventDiv.attr("id", "eventbrite-div");
+        $("#row-1").append(eventDiv);
+
+        // USE A FOR LOOP TO DISPLAY EVENT CARDS
+
+        for (i = 0; i < response.events.length; i++){
+
+        //Create divs with appropriate ids to receive the API information
+        var eventDescription = response.events[i].description.text;
+        var eventLogo = response.events[i].logo.url;
+
+                //display event card
+        var eventCard = $("<div>").addClass("card");
+        eventCard.attr("id", "event-card" + i);
+        $("#eventbrite-div").append(eventCard);
+
+        // Display the event logo
+
+        var eventLogoDiv = $("<img>").addClass("card-img-top");
+        eventLogoDiv.attr("src", eventLogo);
+        eventLogoDiv.attr("id", "event-logo" + i);
+        eventLogoDiv.attr("style", "width: 100%");
+        $("#event-card" + i).append(eventLogoDiv)
+
+        //Display the event info
+
+        var eventInfoDiv = $("<p>").addClass("card-text");
+        eventInfoDiv.attr("id", "event-info" + i);
+        eventInfoDiv.append(eventDescription);
+        $("#event-card" + i).append(eventInfoDiv);
+
+   
+        
+        // Append the Eventbrite Information
+
+        //This is the event description that we will want to post
+        console.log("The Eventbrite respnose that will be displayed is:" + JSON.stringify(response.events[i].description.text));
+
+        }
+
 
     })
-
-
-
-
-})
+});

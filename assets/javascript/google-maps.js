@@ -7,7 +7,7 @@ var service;
 var infowindow;
 
 function initMap() {
-  var map = new google.maps.Map(document.getElementById('map'), {
+  var map = new google.maps.Map(document.getElementById('map-api'), {
     zoom: 12,
     center: { lat: 41.323516, lng: -71.804009 },
     //Control Features for the map Display
@@ -28,10 +28,10 @@ function initMap() {
   var bikeLayer = new google.maps.BicyclingLayer();
   bikeLayer.setMap(map);
 
-  //Listener for new user input
-  document.getElementById('btn-submit').addEventListener('click', function () {
-    geocodeAddress(geocoder, map);
-  });
+  // //Listener for new user input
+  // document.getElementById('btn-submit').addEventListener('click', function () {
+  //   geocodeAddress(geocoder, map);
+  // });
 }
 
 // Function that receives an address from the user and receives polar coordinates for the location from Google Maps
@@ -87,7 +87,3 @@ function geocodeAddress(geocoder, resultsMap) {
 //     return result.results[0].geometry.location;
 //   });
 // }
-
-
-
-

@@ -37,6 +37,14 @@ body{
     text-align:center;
 }
 
+#address-form {
+    text-align: center;
+}
+
+#user-input {
+    margin: auto;
+}
+
 input[type=text] {
     font-size: 20px;
     width: 45%;
@@ -105,4 +113,8 @@ input[type=text] {
     color: turquoise;
     margin-bottom: 25px;
     margin-top: 20px;
+}
+
+#eb-info {
+    height: 200px;
 }
