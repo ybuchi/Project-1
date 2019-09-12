@@ -12,7 +12,9 @@
                     dataType: 'jsonp',
                     success:function(weather){
                         console.log(weather)
+                        $('body').append(`<p1>Weather: ${weather.weather[0].main}`)
                         $('body').append(`<p>Temperature: ${weather.main.temp}`)
+                        
                     }
                 });
      
