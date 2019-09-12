@@ -46,11 +46,11 @@ $("#btn-submit").click(function(){
         $("#api-container-1").append(apiRow1);
 
         var mapDiv = $("<div>").addClass("col-md-6");
-        mapDiv.attr("id", "map-api");
+        mapDiv.attr("id", "eb-logo");
         $("#api-row-1").append(mapDiv);
 
         var eventBriteDiv = $("<div>").addClass("col-md-6");
-        eventBriteDiv.attr("id", "eventbrite-api");
+        eventBriteDiv.attr("id", "eb-info");
         $("#api-row-1").append(eventBriteDiv);
 
 
@@ -62,8 +62,8 @@ $("#btn-submit").click(function(){
         var eventDescription = response.events[0].description.text;
         var eventLogo = $("<img>").attr("src",response.events[0].logo.url)
 
-        $("#eventbrite-api").append(eventDescription);
-        $("#map-api").append(eventLogo);
+        $("#eb-info").append(eventDescription);
+        $("#eb-logo").append(eventLogo);
 
 
 
