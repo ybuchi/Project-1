@@ -4,30 +4,31 @@ $( document ).ready(function() {
 });
 
 $("#btn-submit").click(function(){
-    event.preventDefault();
     console.log("The user has clicked the submit button.");
 
     //Create variables for AJAX call
     //
-    var eventAddress = $("user-input").val();
+    var eventAddress = $("#user-input").val();
     console.log(eventAddress);
 
     var APIkey = "FWYJCNLH34HYMJ3ZOE";
     
     //Constructing the URL
-    var queryURL = "https://www.eventbriteapi.com/v3/users/me/?token=" + APIkey + "/events/search/?location.address="+ eventAddress;
+    var queryURL = "https://cors-anywhere.herokuapp.com/https://www.eventbriteapi.com/v3/events/search?location.address=" + eventAddress + "&location.within=10km&expand=venue";
 
     //Make the AJAX call
 
     $.ajax({
         url: queryURL,
-        method: "GET"
-    }).then(function(response){
-
-        console.log(response);
-
+        method: "GET",
+        headers: {
+            Authorization: "Bearer FYKCROWHDWQSXBO7WGPZ"
+        }
     })
-
+    .then(function(response) {
+        console.log('response received ');
+        console.log(response);
+    })
 
 
 
