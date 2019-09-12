@@ -35,36 +35,68 @@ $("#btn-submit").click(function(){
 
         //Add a navbar
 
-        //Create divs with appropriate ids to receive the API information
 
-        var apiContainer1 = $("<div>").addClass("container");
-        apiContainer1.attr("id", "api-container-1");
-        $("body").append(apiContainer1);
+        // Create a for loop to create and display the Eventbrite API
 
-        var apiRow1 = $("<div>").addClass("row");
-        apiRow1.attr("id", "api-row-1");
-        $("#api-container-1").append(apiRow1);
+ 
 
+        // Create the high-level container
+        var hlContainer = $("<div>").addClass("container");
+        hlContainer.attr("id", "hl-container");
+        $("body").append(hlContainer);
+
+        //Create the row and divs for the map and eventbrite apis
+
+        var row1 = $("<div>").addClass("row");
+        row1.attr("id", "row-1");
+        $("#hl-container").append(row1);
+
+            // display GOOGLE MAPS DIV
         var mapDiv = $("<div>").addClass("col-md-6");
-        mapDiv.attr("id", "eb-logo");
-        $("#api-row-1").append(mapDiv);
+        mapDiv.attr("id", "map-div");
+        $("#row-1").append(mapDiv);
 
-        var eventBriteDiv = $("<div>").addClass("col-md-6");
-        eventBriteDiv.attr("id", "eb-info");
-        $("#api-row-1").append(eventBriteDiv);
+            // display Eventbrite DIV
+        var eventDiv = $("<div>").addClass("col-md-6");
+        eventDiv.attr("id", "eventbrite-div");
+        $("#row-1").append(eventDiv);
 
+        // USE A FOR LOOP TO DISPLAY EVENT CARDS
 
+        for (i = 0; i < response.events.length; i++){
+
+        //Create divs with appropriate ids to receive the API information
+        var eventDescription = response.events[i].description.text;
+        var eventLogo = response.events[i].logo.url;
+
+                //display event card
+        var eventCard = $("<div>").addClass("card");
+        eventCard.attr("id", "event-card" + i);
+        $("#eventbrite-div").append(eventCard);
+
+        // Display the event logo
+
+        var eventLogoDiv = $("<img>").addClass("card-img-top");
+        eventLogoDiv.attr("src", eventLogo);
+        eventLogoDiv.attr("id", "event-logo" + i);
+        eventLogoDiv.attr("style", "width: 100%");
+        $("#event-card" + i).append(eventLogoDiv)
+
+        //Display the event info
+
+        var eventInfoDiv = $("<p>").addClass("card-text");
+        eventInfoDiv.attr("id", "event-info" + i);
+        eventInfoDiv.append(eventDescription);
+        $("#event-card" + i).append(eventInfoDiv);
+
+   
+        
         // Append the Eventbrite Information
 
         //This is the event description that we will want to post
-        console.log("The Eventbrite respnose that will be displayed is:" + JSON.stringify(response.events[0].description.text));
+        console.log("The Eventbrite respnose that will be displayed is:" + JSON.stringify(response.events[i].description.text));
 
-        var eventDescription = response.events[0].description.text;
-        var eventLogo = $("<img>").attr("src",response.events[0].logo.url)
-
-        $("#eb-info").append(eventDescription);
-        $("#eb-logo").append(eventLogo);
-
+        }
 
 
     })
