@@ -76,7 +76,7 @@ $("#btn-submit").click(function(){
         for (i = 0; i < response.events.length; i++){
 
         //Create divs with appropriate ids to receive the API information
-        var eventDescription = response.events[i].description.text;
+        var eventDescription = response.events[i].name.text;
         var eventLogo = response.events[i].logo.url;
 
                 //display event card
@@ -104,7 +104,7 @@ $("#btn-submit").click(function(){
         // Append the Eventbrite Information
 
         //This is the event description that we will want to post
-        console.log("The Eventbrite respnose that will be displayed is:" + JSON.stringify(response.events[i].description.text));
+        console.log("The Eventbrite respnose that will be displayed is:" + JSON.stringify(response.events[i].name.text));
 
         }
 
