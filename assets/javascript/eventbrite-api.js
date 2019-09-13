@@ -36,10 +36,12 @@ $("#btn-submit").click(function(){
         //Add a navbar
         var navbar = $("<nav>").addClass("navbar navbar-light");
         navbar.attr("id", "navbar");
+   
         $("body").append(navbar);
 
         var navbarBrand = $("<a>").addClass("navbar-brand mb-0 h1");
-        navbarBrand.attr("id", "navbar-brand")
+        navbarBrand.attr("id", "navbar-brand");
+        navbarBrand.attr("href", "https://ybuchi.github.io/Project-1/");
         navbarBrand.append("Beach Box");
         $(navbar).append(navbarBrand);
 
