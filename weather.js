@@ -25,12 +25,17 @@ $(document).ready(function(){
 
 
 
-$('button').on('click' ,function(){
+$("#btn-submit").on('click' ,function(){
     var x = $(this).data("search");
 
     var queryURL = "api.openweathermap.org/data/2.5/weather?q="+x+"&api_key=9b40e26591d4e0f348c8b86121312754";
     console.log (queryURL);})
 
-    $.ajax({url:queryURL,method:'GET'})
-    .done
+    $.ajax({
+        url:queryURL,
+        method:'GET'})
+    .then(function(response){
+        console.log("WEATHER data is loaded");
+        console.log(response);
+    })
     

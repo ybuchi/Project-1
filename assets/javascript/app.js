@@ -70,9 +70,14 @@ $("#btn-submit").click(function(){
      $("#weather-row").append(weatherDiv);
 
      /////////////// YELP
-     var yelpRow = $("<div>").addClass("row");
+     var yelpRow = $("<div>").addClass("row mt-4");
      yelpRow.attr("id", "yelp-row");
      $("#large-container").append(yelpRow);
+
+     var yelpTitle = $("<h3>").addClass("yelprow-title col-md-12");
+     yelpTitle.attr("id", "yelp-row-title");
+     yelpTitle.append("FOOD");
+     $("#yelp-row").append(yelpTitle);
 
 
 
@@ -179,7 +184,7 @@ $("#btn-submit").click(function(){
         //Put them in the yelp Div
 
         //create and display yelp card
-        var yelpCard = $("<div>").addClass("card col-md-4 mb-3");
+        var yelpCard = $("<div>").addClass("card col-md-6 mb-3");
         yelpCard.attr("id", "yelp-card" + i);
         $("#yelp-row").append(yelpCard);
 
