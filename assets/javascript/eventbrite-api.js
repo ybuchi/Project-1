@@ -56,15 +56,20 @@ $("#btn-submit").click(function(){
         $("#hl-container").append(row1);
 
             // display GOOGLE MAPS DIV
-        var mapDiv = $("<div>").addClass("col-md-6");
+        var mapDiv = $("<div>").addClass("col-md-8");
         mapDiv.attr("id", "map-div");
         $("#row-1").append(mapDiv);
 
             // display Eventbrite DIV
-        var eventDiv = $("<div>").addClass("col-md-6");
+        var eventDiv = $("<div>").addClass("col-md-4 mt-4");
         eventDiv.attr("id", "eventbrite-div");
         eventDiv.attr("style", "height: 600px");
         $("#row-1").append(eventDiv);
+
+        var eventTitle = $("<h3>").addClass("eventdiv-title");
+        eventTitle.attr("id", "event-div-title")
+        eventTitle.append("EVENTS");
+        $("#eventbrite-div").append(eventTitle);
 
         // USE A FOR LOOP TO DISPLAY EVENT CARDS
 

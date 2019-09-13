@@ -125,5 +125,13 @@ input[type=text] {
     font-family: 'Megrim', cursive;
     font-size: 30px;
     font-weight: bold;
-    color: turquoise
+    color: blue
+}
+
+#eventbrite-div{
+    background-color: rgb(255, 255, 255,0.3);
+}
+
+#event-div-title{
+    text-align: center;
 }
