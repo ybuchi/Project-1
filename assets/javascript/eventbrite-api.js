@@ -34,11 +34,15 @@ $("#btn-submit").click(function(){
         $("body").html("");
 
         //Add a navbar
+        var navbar = $("<nav>").addClass("navbar navbar-light");
+        navbar.attr("id", "navbar");
+        $("body").append(navbar);
 
+        var navbarBrand = $("<a>").addClass("navbar-brand mb-0 h1");
+        navbarBrand.attr("id", "navbar-brand")
+        navbarBrand.append("Beach Box");
+        $(navbar).append(navbarBrand);
 
-        // Create a for loop to create and display the Eventbrite API
-
- 
 
         // Create the high-level container
         var hlContainer = $("<div>").addClass("container");
@@ -59,6 +63,7 @@ $("#btn-submit").click(function(){
             // display Eventbrite DIV
         var eventDiv = $("<div>").addClass("col-md-6");
         eventDiv.attr("id", "eventbrite-div");
+        eventDiv.attr("style", "height: 600px");
         $("#row-1").append(eventDiv);
 
         // USE A FOR LOOP TO DISPLAY EVENT CARDS
@@ -70,7 +75,7 @@ $("#btn-submit").click(function(){
         var eventLogo = response.events[i].logo.url;
 
                 //display event card
-        var eventCard = $("<div>").addClass("card");
+        var eventCard = $("<div>").addClass("card mb-3");
         eventCard.attr("id", "event-card" + i);
         $("#eventbrite-div").append(eventCard);
 
