@@ -94,7 +94,7 @@ $("#btn-submit").click(function(){
 
         //Display the event info
 
-        var eventInfoDiv = $("<p>").addClass("card-text");
+        var eventInfoDiv = $("<p>").addClass("card-text my-2");
         eventInfoDiv.attr("id", "event-info" + i);
         eventInfoDiv.append(eventDescription);
         $("#event-card" + i).append(eventInfoDiv);
