@@ -118,3 +118,12 @@ input[type=text] {
 #eb-info {
     height: 200px;
 }
+#navbar{
+    background-color: peachpuff;
+}
+#navbar-brand{
+    font-family: 'Megrim', cursive;
+    font-size: 30px;
+    font-weight: bold;
+    color: turquoise
+}
