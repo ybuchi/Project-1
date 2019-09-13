@@ -120,6 +120,7 @@ input[type=text] {
 }
 #navbar{
     background-color: peachpuff;
+    border-bottom: solid 2px black;
 }
 #navbar-brand{
     font-family: 'Megrim', cursive;
